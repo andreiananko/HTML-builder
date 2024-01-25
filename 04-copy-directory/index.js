@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const sourceFolder = './files';
-const destinationFolder = './files-copy';
+const sourceFolder = '04-copy-directory/files';
+const destinationFolder = '04-copy-directory/files-copy';
 
 function copyDir(source, destination) {
   fs.readdir(source, { withFileTypes: true }, (err, files) => {
