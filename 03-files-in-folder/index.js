@@ -2,7 +2,7 @@ const { stdin, stdout } = process;
 const fs = require('fs');
 const path = require('path');
 
-const folderPath = './secret-folder';
+const folderPath = '03-files-in-folder/secret-folder';
 
 fs.readdir(folderPath, (err, files) => {
   if (err) {
