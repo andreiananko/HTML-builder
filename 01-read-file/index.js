@@ -1,16 +1,18 @@
 const { stdout, exit } = process;
-
 const fs = require('fs');
 
-const dataTextFile = fs.readFile(
-  '01-read-file/text.txt',
-  'utf8',
-  (error, data) => {
-    if (error) {
-      console.error(error);
-      process.exit(1);
-    }
-    stdout.write(data + '\n');
-    process.exit();
-  },
-);
+const filePath = '01-read-file/text.txt';
+const readStream = fs.createReadStream(filePath, 'utf8');
+
+readStream.on('error', (error) => {
+  console.error(error);
+  process.exit(1);
+});
+
+readStream.on('data', (data) => {
+  stdout.write(data + '\n');
+});
+
+readStream.on('end', () => {
+  process.exit();
+});
