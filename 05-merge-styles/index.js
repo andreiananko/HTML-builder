@@ -2,8 +2,8 @@ const { stdin, stdout } = process;
 const fs = require('fs');
 const path = require('path');
 
-const stylesFolderPath = './styles';
-const distFolderPath = './project-dist';
+const stylesFolderPath = '05-merge-styles/styles';
+const distFolderPath = '05-merge-styles/project-dist';
 const outputFile = 'bundle.css';
 
 function compileStyles() {
